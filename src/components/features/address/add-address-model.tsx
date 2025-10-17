@@ -1,3 +1,4 @@
+"use client";
 import {
   Dialog,
   DialogContent,
@@ -8,10 +9,11 @@ import {
 } from "@/components/ui/dialog";
 import { getTranslations } from "next-intl/server";
 import AddForm from "./add-address-form";
+import { useTranslations } from "next-intl";
 
-export default async function AddAddress() {
+export default function AddAddress() {
   //translation
-  const t = await getTranslations("address");
+  const t = useTranslations("address");
 
   return (
     <Dialog>

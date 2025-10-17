@@ -99,8 +99,8 @@ const CountrySelect = ({
           className={cn(
             "flex gap-1 h-10 px-3",
             isRTL
-              ? "rounded-l-none rounded-r-lg border-l-0 flex-row-reverse"
-              : "rounded-r-none rounded-l-lg border-r-0 flex-row",
+              ? "rounded-l-none rounded-r-lg border-l-0 flex-row-reverse h-12"
+              : "rounded-r-none rounded-l-lg border-r-0 flex-row h-12",
           )}
           disabled={disabled}
         >

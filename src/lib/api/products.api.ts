@@ -82,3 +82,19 @@ export async function getProductById(id: string) {
   if ("error" in payload) throw new Error(payload.error || "Can't get product");
   return payload.product;
 }
+
+// Get by filter type
+export async function getAllProductsByFilter(params: string = "") {
+  try {
+    const response = await fetch(`${process.env.API!}/products?${params}`);
+
+    const payload: APIResponse<PaginatedResponse<Products>> = await response.json();
+
+    if ("error" in payload) throw new Error(payload.error);
+
+    return payload;
+  } catch (error) {
+    console.error(error);
+    throw error;
+  }
+}

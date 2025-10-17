@@ -49,7 +49,7 @@ export default async function SummaryWithDiscount() {
       <div className="text-zinc-800 w-full flex justify-between py-3">
         <span className="text-lg font-medium ">{t("sub-total")}</span>
         <span className="font-semibold text-xl">
-          {format.number(totalPriceAfterDiscount, {
+          {format.number(totalPrice, {
             style: "currency",
             currency: "EGP",
             maximumFractionDigits: 0,
@@ -72,7 +72,7 @@ export default async function SummaryWithDiscount() {
       <div className="text-zinc-800 font-bold text-2xl flex justify-between py-3">
         <span>{t("total")}</span>
         <span>
-          {format.number(totalPrice, {
+          {format.number(totalPriceAfterDiscount, {
             style: "currency",
             currency: "EGP",
             maximumFractionDigits: 0,

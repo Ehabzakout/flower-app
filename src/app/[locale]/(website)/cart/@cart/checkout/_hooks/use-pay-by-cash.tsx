@@ -3,7 +3,6 @@ import { useMutation } from "@tanstack/react-query";
 import { toast } from "sonner";
 import { payByCashAction } from "../_actions/pay-cash.action";
 import { useTranslations } from "next-intl";
-import { useRouter } from "@/i18n/navigation";
 
 export default function usePayByCash() {
   // Translation
@@ -15,10 +14,7 @@ export default function usePayByCash() {
       await payByCashAction(shippingAddressValues),
 
     onSuccess: () => {
-      toast.success(t("message-on-cash"));
-      setTimeout(() => {
-        window.location.href = "/";
-      }, 1500);
+      toast.success("{t('message-on-cash')}");
     },
     onError: (error: Error) => {
       toast.error(error.message);

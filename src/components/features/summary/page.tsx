@@ -11,7 +11,7 @@ export default async function Summary() {
   const cartItems = cartInfo.cart.cartItems;
   // check has discount
   const hasDiscount = cartItems.some(
-    (item) => item.product.priceAfterDiscount < item.product.price,
+    (item: CartItem) => item.product.priceAfterDiscount < item.product.price,
   );
 
   // translation

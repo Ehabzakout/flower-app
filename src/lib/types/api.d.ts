@@ -54,6 +54,7 @@ declare type Product = {
   slug: string;
   description: string;
   imgCover: string;
+  images?: string[];
   price: number;
   priceAfterDiscount: number;
   quantity: number;

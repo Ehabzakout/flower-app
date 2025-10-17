@@ -28,7 +28,7 @@ export default async function ProductReview({ productId }: { productId: string }
             <div className="space-y-[10px] col-span-6 relative before:absolute before:border-l-2 before:h-full before:border-zinc-200 before:-left-5 max-h-[300px] overflow-auto">
               {/* comment */}
               <Suspense fallback={<p>Loading comments...</p>}>
-                {payload.reviews.map((review) => (
+                {payload.reviews.map((review: any) => (
                   <CommentComponent key={review._id} />
                 ))}
               </Suspense>

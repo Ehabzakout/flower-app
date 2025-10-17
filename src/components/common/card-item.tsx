@@ -2,10 +2,11 @@ import { ShoppingCart, Star } from "lucide-react";
 import Image from "next/image";
 import React from "react";
 import AddToCart from "./add-to-cart/add-to-cart";
+import { Link } from "@/i18n/navigation";
 
 export default function ProductItem({ product }: { product: Product }) {
   return (
-    <div className=" w-full h-[364px] ">
+    <Link href={`/product/${product._id}`} className=" w-full h-[364px] ">
       <img
         src={product.imgCover}
         alt={product.title}
@@ -46,6 +47,6 @@ export default function ProductItem({ product }: { product: Product }) {
           </AddToCart>
         </div>
       </div>
-    </div>
+    </Link>
   );
 }

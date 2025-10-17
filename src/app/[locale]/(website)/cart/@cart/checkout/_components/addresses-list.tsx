@@ -4,7 +4,6 @@ import { useCheckout } from "@/lib/context/checkout-context";
 import { MoveRight, Phone, MoveLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useLocale, useTranslations } from "next-intl";
-import AddAddress from "@/components/features/address/add-address-model";
 
 type Props = {
   addresses: Address[];
@@ -50,7 +49,7 @@ export default function AddressesList({ addresses }: Props) {
                     }`}
                   />
                 </div>
-                {address.phone}
+                +2{address.phone}
               </div>
             </div>
 
@@ -77,7 +76,7 @@ export default function AddressesList({ addresses }: Props) {
 
       {/* Add Address Button */}
       <Button className="bg-maroon-50 text-maroon-600 font-medium w-full rounded-lg  hover:text-maroon-50">
-        <AddAddress />
+        {t("add-address-button")}
       </Button>
 
       <hr />
