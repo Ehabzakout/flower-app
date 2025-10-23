@@ -11,7 +11,7 @@ export async function getAllStatistics() {
     const response = await fetch(`${process.env.API}/statistics`, {
       method: "GET",
       headers: {
-        Authorization: `Bearer ${token.token}`,
+        Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiNjgzNjM2MWJhOGJjYTMwN2Y5YzU1MTc1Iiwicm9sZSI6InVzZXIiLCJpYXQiOjE3NTQyODY3NDh9.yCyvrOCIyx31BVaRqmWJu1tAF5SZlt0M-GDRnwm_WSg`,
         "Content-Type": "application/json",
       },
     });

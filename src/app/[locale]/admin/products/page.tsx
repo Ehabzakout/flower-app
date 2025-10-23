@@ -1,10 +1,12 @@
 import PaginationComponent from "@/components/common/pagination-component";
-import { Button } from "@/components/ui/button";
+import { Button, buttonVariants } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Search, Plus } from "lucide-react";
 import TableComponent from "./_components/table";
 import { getAllProducts } from "@/lib/api/products.api";
 import { Suspense } from "react";
+import { Link } from "@/i18n/navigation";
+import { cn } from "@/lib/utils/cn";
 
 export default async function ProductsPage() {
   // Fetch Data
@@ -15,10 +17,13 @@ export default async function ProductsPage() {
       {/* Header */}
       <div className="flex items-center justify-between mb-6">
         <h1 className="text-2xl font-semibold text-gray-900">All Products</h1>
-        <Button className="bg-red-600 hover:bg-red-700 text-white">
+        <Link
+          href={"/admin/products/add-product"}
+          className={cn(buttonVariants(), "bg-red-600 hover:bg-red-700 text-white")}
+        >
           <Plus className="w-4 h-4 mr-2" />
           Add a new product
-        </Button>
+        </Link>
       </div>
 
       {/* Search Bar */}
